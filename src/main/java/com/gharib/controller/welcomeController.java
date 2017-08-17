@@ -32,13 +32,13 @@ public class welcomeController {
             
             urlCounter.countDomains();   
             Map<String, Integer> founds = urlCounter.getDomainCount();
-            model.addAttribute( "contactForm",  founds);
+            model.addAttribute( "listDomains",  founds);
             model.addAttribute("domain",url);
             return "exampel";
-		
+	
 	}
         @RequestMapping(value="/check", method = RequestMethod.GET)
-        public String editPerson(@ModelAttribute("domain") Domain url, Model model) throws IOException, URISyntaxException{
+        public String check(@ModelAttribute("domain") Domain url, Model model) throws IOException, URISyntaxException{
           try {
                 urlCounter = new UrlCounter(url.getDomain());
                 
@@ -47,7 +47,7 @@ public class welcomeController {
             }
             urlCounter.countDomains();
             final Map<String, Integer> founds = urlCounter.getDomainCount();
-            model.addAttribute("contactForm", founds);
+            model.addAttribute("listDomains", founds);
             model.addAttribute("domain", url);
             return "exampel";
          }
