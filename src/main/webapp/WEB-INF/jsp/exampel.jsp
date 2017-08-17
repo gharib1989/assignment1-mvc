@@ -42,8 +42,8 @@
            <div class="panel-body">
                 <div class="row text-center">
             
-	             <c:forEach items="${contactForm}" var="contactMap" varStatus="status">
-                         <h4>    <a href="#">${contactMap.key} <span class="badge">${contactMap.value}</span></a></h4><br>
+	             <c:forEach items="${listDomains}" var="i" varStatus="status">
+                         <h4>    <a href="#">${i.key} <span class="badge">${i.value}</span></a></h4><br>
 	             </c:forEach>
                 </div>
            </div>
@@ -53,14 +53,6 @@
    <div class="col-sm-3"> 
   </div>
  </div>
-<script>
-function validateForm() {
-    var x = document.forms["myForm"]["fname"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-}
-</script>
+
 </body>
 </html>
